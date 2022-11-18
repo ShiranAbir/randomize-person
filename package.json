@@ -1,0 +1,23 @@
+{
+  "name": "randomize-person",
+  "version": "1.0.0",
+  "description": "Generate massive amounts of fake data of a fake person",
+  "keywords": [
+    "randomize-person",
+    "random person generator",
+    "random person",
+    "fake person",
+    "person-generator"
+  ],
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ShiranAbir/randomize-person.git"
+  },
+  "author": "Shiran Abir",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ShiranAbir/randomize-person/issues"
+  },
+  "homepage": "https://github.com/ShiranAbir/randomize-person#readme"
+}
