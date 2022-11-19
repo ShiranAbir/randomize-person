@@ -16,7 +16,7 @@ function getRandomPerson() {
         instagramUserDetails: getRandomInstagramUserDetails(names),
         twitterUserDetails: getRandomTwitterUserDetails(names),
         linkedinUserDetails: getRandomLinkedinUserDetails(names),
-        motorDetails: getRandomMotorDetails()
+        drivingDetails: getRandomDrivingDetails()
     }
 
     return person
@@ -182,13 +182,13 @@ function getRandomCurrentAccount() {
     return _getRandomInt(-1000, 50000) + '$'
 }
 
-function getRandomVehicleNumberPlate() {
-    let vehicleNumberPlate = ''
+function getRandomVehiclePlateNumber() {
+    let vehiclePlateNumber = ''
     const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'
     for (let i = 0; i < _getRandomInt(6, 7); i++) {
-        vehicleNumberPlate += characters.charAt(_getRandomChar(characters.length));
+        vehiclePlateNumber += characters.charAt(_getRandomChar(characters.length));
     }
-    return vehicleNumberPlate;
+    return vehiclePlateNumber;
 }
 
 function getRandomWeight(gender) {
@@ -302,9 +302,9 @@ function getRandomVehicle() {
     return { brand, model }
 }
 
-function getRandomMotorDetails() {
+function getRandomDrivingDetails() {
     const hasDrivingLicense = Math.random() < 0.5
-    return hasDrivingLicense ? { hasDrivingLicense, driversLicenseType: getRandomDriversLicenseType(), vehicleNumberPlate: getRandomVehicleNumberPlate(), vehicle: getRandomVehicle() } : { hasDrivingLicense }
+    return hasDrivingLicense ? { hasDrivingLicense, driversLicenseType: getRandomDriversLicenseType(), vehiclePlateNumber: getRandomVehiclePlateNumber(), vehicle: getRandomVehicle() } : { hasDrivingLicense }
 }
 
 function getRandomFriendsAmount() {
