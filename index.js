@@ -258,7 +258,7 @@ function getRandomUserName({ firstName, lastName }) {
 }
 
 function getRandomFacebookUserDetails(names) {
-    return { registered: getRandomRegistered(), userName: getRandomUserName(names), postsAmount: getRandomPostsAmount(), password: getRandomPassword(), lastSeen: getRandomLastSeen(), photosAmount: getRandomPhotosAmount(), friendsAmount: getRandomFriendsAmount(), isOnline: getRandomIsOnline() } : { hasAccount }
+    return { registered: getRandomRegistered(), userName: getRandomUserName(names), postsAmount: getRandomPostsAmount(), password: getRandomPassword(), lastSeen: getRandomLastSeen(), photosAmount: getRandomPhotosAmount(), friendsAmount: getRandomFriendsAmount(), isOnline: getRandomIsOnline() }
 }
 
 function getRandomTwitterUserDetails(names) {
@@ -319,11 +319,11 @@ function getRandomActivityAmount() {
 }
 
 function getRandomLinkedinUserDetails(names) {
-    return { registered: getRandomRegistered(), userName: getRandomUserName(names), password: getRandomPassword(), lastSeen: getRandomLastSeen(), connections: getRandomConnectionsAmount(), isOnline: getRandomIsOnline(), skills: getRandomSkillsAmount(), activity: getRandomActivityAmount() } : { hasAccount }
+    return { registered: getRandomRegistered(), userName: getRandomUserName(names), password: getRandomPassword(), lastSeen: getRandomLastSeen(), connections: getRandomConnectionsAmount(), isOnline: getRandomIsOnline(), skills: getRandomSkillsAmount(), activity: getRandomActivityAmount() } 
 }
 
 function getRandomInstagramUserDetails(names) {
-    return { registered: getRandomRegistered(), userName: getRandomUserName(names), password: getRandomPassword(), lastSeen: getRandomLastSeen(), photosAmount: getRandomPhotosAmount(), followers: getRandomFollowersAmount(), following: getRandomFollowingAmount(), isOnline: getRandomIsOnline() } : { hasAccount }
+    return { registered: getRandomRegistered(), userName: getRandomUserName(names), password: getRandomPassword(), lastSeen: getRandomLastSeen(), photosAmount: getRandomPhotosAmount(), followers: getRandomFollowersAmount(), following: getRandomFollowingAmount(), isOnline: getRandomIsOnline() } 
 }
 
 function getRandomHasLoan() {
