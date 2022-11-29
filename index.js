@@ -226,7 +226,7 @@ function getRandomName(gender) {
 function getPersonalDetails({ firstName, lastName }) {
     const email = getRandomEmail(firstName, lastName)
     const birthDayDate = getRandomBirthDay()
-    const age = new Date().getFullYear() - parseInt(birthDayDate.split(' ')[3])
+    const age = new Date().getFullYear() - parseInt(birthDayDate.split(' ')[2])
     return [{ _id: getRandomId(), idCardNumber: getRandomIdCardNumber(), passportNumber: getRandomPassportNumber(), birthDay: birthDayDate, age }, { email, mobie: getRandomMobile(), phone: getRandomPhone() }]
 }
 
