@@ -151,7 +151,8 @@ function getRandomJobTitle() {
 }
 
 function getRandomBirthDay() {
-    const date = new Date(_getRandomInt(Date.now() - 3122064000000, Date.now() - 567648000000)).toDateString()
+    const options = { year: 'numeric', month: 'long', day: 'numeric' }
+    const date = new Date(_getRandomInt(Date.now() - 3122064000000, Date.now() - 567648000000)).toLocaleDateString(undefined, options)
     return date
 }
 
