@@ -171,7 +171,7 @@ function getRandomEducation() {
 }
 
 function getRandomSalary() {
-    return _getRandomInt(2125, 12500) + '$'
+    return '$' + _getRandomInt(2125, 12500)
 }
 
 function getRandomDriversLicenseType() {
@@ -180,7 +180,7 @@ function getRandomDriversLicenseType() {
 }
 
 function getRandomCurrentAccount() {
-    return _getRandomInt(-1000, 50000) + '$'
+    return '$' + _getRandomInt(-1000, 50000) 
 }
 
 function getRandomVehiclePlateNumber() {
@@ -330,7 +330,9 @@ function getRandomInstagramUserDetails(names) {
 function getRandomHasLoan() {
     const hasLoan = Math.random() < 0.5
     const loanAmount = getRandomLoanAmount()
-    return hasLoan ? { hasLoan, loanAmount, leftToPay: loanAmount - _getRandomInt(0, loanAmount), dateTaken: getRandomLoanDate('start'), lastDayToPay: getRandomLoanDate('end') } : { hasLoan }
+    const loanAmoutStr = '$' + loanAmount
+    const leftToPay = '$' + (loanAmount - _getRandomInt(0, loanAmount))
+    return hasLoan ? { hasLoan, loanAmoutStr, leftToPay, dateTaken: getRandomLoanDate('start'), lastDayToPay: getRandomLoanDate('end') } : { hasLoan }
 }
 
 function getRandomLoanAmount() {
@@ -338,7 +340,8 @@ function getRandomLoanAmount() {
 }
 
 function getRandomLoanDate(startOrEnd) {
-    return startOrEnd == 'start' ? new Date(_getRandomInt(Date.now() - 31536000000, Date.now())).toLocaleString() : new Date(_getRandomInt(Date.now(), Date.now() + 9460800000000)).toLocaleString()
+    const options = { year: 'numeric', month: 'long', day: 'numeric' }
+    return startOrEnd == 'start' ? new Date(_getRandomInt(Date.now() - 31536000000, Date.now())).toLocaleDateString(undefined, options) : new Date(_getRandomInt(Date.now(), Date.now() + 315360000000)).toLocaleDateString(undefined, options)
 }
 
 module.exports = {
