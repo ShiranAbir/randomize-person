@@ -1,6 +1,6 @@
 <div align="center">
   <h1>randomize-person</h1>
-  <p>Generate massive amounts of fake data of a person for testing and development.</p>
+  <p>Generate massive amounts of fake data of a person for testing and development using TypeScript!</p>
   
   [![npm version](https://badgen.net/npm/v/randomize-person)](https://www.npmjs.com/package/randomize-person)
 
