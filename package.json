@@ -1,6 +1,6 @@
 {
   "name": "randomize-person",
-  "version": "1.0.6",
+  "version": "2.0.0",
   "description": "Generate massive amounts of fake data of a fake person",
   "keywords": [
     "randomize-person",
@@ -9,7 +9,11 @@
     "fake person",
     "person-generator"
   ],
-  "main": "index.js",
+  "files": [
+    "dist/"
+  ],
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ShiranAbir/randomize-person.git"
@@ -19,5 +23,13 @@
   "bugs": {
     "url": "https://github.com/ShiranAbir/randomize-person/issues"
   },
-  "homepage": "https://github.com/ShiranAbir/randomize-person#readme"
+  "homepage": "https://github.com/ShiranAbir/randomize-person#readme",
+  "scripts": {
+    "prepublishOnly": "tsc",
+    "build": "tsc"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.10",
+    "typescript": "^4.9.3"
+  }
 }
