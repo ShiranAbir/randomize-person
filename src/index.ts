@@ -1,6 +1,6 @@
-const { getFemaleNames, getMaleNames, getLastNames, getJobTitle, getVehicles, getAddresses } = require("./lists.js");
+import { getFemaleNames, getMaleNames, getLastNames, getJobTitle, getVehicles, getAddresses } from './lists';
 
-function getRandomPerson(): object {
+function getRandomPerson() {
     const gender = getRandomGender()
     const names = getRandomName(gender)
     const person = {
@@ -31,7 +31,7 @@ function getRandomHexColor(): string {
     return color;
 }
 
-function getRandomAddress(): string {
+function getRandomAddress() {
     const addresses = getAddresses()
     return addresses[_getRandomChar(addresses.length)]
 }
@@ -131,16 +131,6 @@ function getRandomGender(): string {
     return sex[_getRandomInt(0, 1)]
 }
 
-function getRandomWord(min: number, max: number): string {
-    let word = '';
-    const alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
-    const wordLength = _getRandomInt(min, max);
-    for (let i = 0; i < wordLength; i++) {
-        word += alphabet[_getRandomChar(alphabet.length)]
-    }
-    return word;
-}
-
 function getRandomEmail(firstName: string, lastName: string): string {
     return firstName + '.' + lastName + '@gmail.com'
 }
@@ -200,18 +190,18 @@ function getRandomHeigth(gender: string): string {
     return gender == 'female' ? _getRandomInt(150, 180) + 'cm' : _getRandomInt(160, 200) + 'cm'
 }
 
-function getRandomAppearance(gender: string): object {
+function getRandomAppearance(gender: string) {
     return { gender, weigth: getRandomWeight(gender), heigth: getRandomHeigth(gender), eyeColor: getRandonEyeColor(), hairColor: getRandonHairColor() }
 }
 
-function getRandomFinance(): object {
+function getRandomFinance() {
     return {
         currentAccount: getRandomCurrentAccount(), salary: getRandomSalary(),
         loan: getRandomHasLoan()
     }
 }
 
-function getRandomProfessional(): object {
+function getRandomProfessional() {
     return { education: getRandomEducation(), jobTitle: getRandomJobTitle() }
 }
 
@@ -245,7 +235,7 @@ function getRandomPreferredFontFamily(): string {
     return fontFamily[_getRandomInt(0, 8)]
 }
 
-function getRandomInternetPreferences(): object {
+function getRandomInternetPreferences() {
     return { preferredHexColor: getRandomHexColor(), preferredMode: getRandomPreferredMode(), preferredFontSize: getRandomPreferredFontSize(), preferredFontFamily: getRandomPreferredFontFamily() }
 }
 
@@ -254,7 +244,7 @@ function getRandomRegistered(): string {
 }
 
 function getRandomUserName(names: { firstName: string, lastName: string }) {
-    let userName = names.firstName + ' ' + names.lastName
+    const userName = names.firstName + ' ' + names.lastName
     return userName
 }
 
@@ -290,11 +280,11 @@ function getRandomIsOnline(): boolean {
     return Math.random() < 0.5
 }
 
-function getRandomPersonalStatus(): object {
+function getRandomPersonalStatus() {
     return { maritalStatus: getRandomMaritalStatus(), childrenAmount: getRandomChildrenAmount() }
 }
 
-function getRandomVehicle(): object {
+function getRandomVehicle() {
     const vehicles = getVehicles()
     const vehicle = vehicles[_getRandomChar(6)]
     const brand = vehicle.brand
@@ -302,7 +292,7 @@ function getRandomVehicle(): object {
     return { brand, model }
 }
 
-function getRandomDrivingDetails(): object {
+function getRandomDrivingDetails() {
     const hasDrivingLicense = Math.random() < 0.5
     return hasDrivingLicense ? { hasDrivingLicense, driversLicenseType: getRandomDriversLicenseType(), vehiclePlateNumber: getRandomVehiclePlateNumber(), vehicle: getRandomVehicle() } : { hasDrivingLicense }
 }
@@ -319,15 +309,15 @@ function getRandomActivityAmount(): number {
     return _getRandomInt(0, 1000)
 }
 
-function getRandomLinkedinUserDetails(names: { firstName: string, lastName: string }): object {
+function getRandomLinkedinUserDetails(names: { firstName: string, lastName: string }) {
     return { registered: getRandomRegistered(), userName: getRandomUserName(names), password: getRandomPassword(), lastSeen: getRandomLastSeen(), connections: getRandomConnectionsAmount(), isOnline: getRandomIsOnline(), skills: getRandomSkillsAmount(), activity: getRandomActivityAmount() } 
 }
 
-function getRandomInstagramUserDetails(names: { firstName: string, lastName: string }): object {
+function getRandomInstagramUserDetails(names: { firstName: string, lastName: string }) {
     return { registered: getRandomRegistered(), userName: getRandomUserName(names), password: getRandomPassword(), lastSeen: getRandomLastSeen(), photosAmount: getRandomPhotosAmount(), followers: getRandomFollowersAmount(), following: getRandomFollowingAmount(), isOnline: getRandomIsOnline() } 
 }
 
-function getRandomHasLoan(): object {
+function getRandomHasLoan() {
     const hasLoan = Math.random() < 0.5
     const loanAmount = getRandomLoanAmount()
     const loanAmoutStr = '$' + loanAmount
@@ -344,6 +334,6 @@ function getRandomLoanDate(startOrEnd: string): string {
     return startOrEnd == 'start' ? new Date(_getRandomInt(Date.now() - 31536000000, Date.now())).toLocaleDateString(undefined, options) : new Date(_getRandomInt(Date.now(), Date.now() + 315360000000)).toLocaleDateString(undefined, options)
 }
 
-export = {
+export {
 	getRandomPerson
 }
